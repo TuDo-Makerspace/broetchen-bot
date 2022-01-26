@@ -15,7 +15,7 @@
   "dependencies": {
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "sqlite3": "^5.0.2",
+    "pg": "^8.7.1",
     "telegraf": "^4.6.0",
     "uuid": "^8.3.2"
   }

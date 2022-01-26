@@ -3,3 +3,6 @@ GET http://localhost:5000/
 
 ### War da
 GET http://localhost:5000/warda
+
+### Hunger
+GET http://localhost:5000/hunger

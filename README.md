@@ -2,7 +2,7 @@
 
 Dieser Telegram-Bot trackt die Zeiten, in denen der Brötchenmann erschienen ist und berechnet daraus die Zeit, zu der er am Wahrscheinlichsten nächstes Mal erscheinen könnte.
 
-Dieser Bot basiert auf Node.js mit npm und SQLite 3. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet (https://www.icloud.com/shortcuts/0e9914618f8f49fdba4dfc13bc94af5d).
+Dieser Bot basiert auf Node.js mit npm und PostgreSQL. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet (https://www.icloud.com/shortcuts/0e9914618f8f49fdba4dfc13bc94af5d).
 
 Der Original-Bot von Ecki ist hier zu finden: https://t.me/broetchen_bot
 
@@ -16,7 +16,7 @@ Der Code enthält keine sensiblen Daten, wie den Bot-Token. Du musst dir deinen 
 
 Wie du einen Telegram-Bot erstellen kannst: https://core.telegram.org/bots#6-botfather
 
-Desweiteren muss npm auf deinem Rechner installiert sein: https://docs.npmjs.com/cli/v7/configuring-npm/install
+Desweiteren muss npm auf deinem Rechner installiert sein: https://docs.npmjs.com/cli/v7/configuring-npm/install, sowie PostgreSQL: https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-linux
 
 ### Run
 

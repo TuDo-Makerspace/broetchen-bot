@@ -1,48 +1,41 @@
 const { v4: uuidv4 } = require("uuid");
 const { formattedTime } = require("./helpers");
-const sqlite3 = require("sqlite3").verbose();
-const path = require("path");
+const { Client } = require("pg");
 
-let db = new sqlite3.Database(
-  path.resolve(__dirname, "../db/broetchenbot.db"),
-  (err) => {
-    if (err) {
-      return console.error(err.message);
-    }
-    console.log("Successfully conntected to the database.");
-  }
-);
+const client = new Client({ connectionString: process.env.DATABASE_URL });
+client.connect();
 
 const initDB = () => {
-  db.prepare("CREATE TABLE IF NOT EXISTS zeiten (id TEXT, ts DATETIME)")
-    .run()
-    .finalize();
+  const query = "CREATE TABLE IF NOT EXISTS zeiten(id TEXT, ts TIMESTAMP)";
+  client.query(query, [], (err, result) => {
+    if (err) return console.error(err.message);
+    console.log("Successfully connected to database.");
+  });
 };
 
 const insertTime = (time) => {
   const id = uuidv4();
-  const query = "INSERT INTO zeiten(id, ts) VALUES(?, ?)";
+  const query = `INSERT INTO zeiten(id, ts) VALUES($1, $2)`;
 
-  db.run(query, [id, time], (err) => {
-    if (err) {
-      throw err;
-    }
+  client.query(query, [id, time], (err, result) => {
+    if (err) return console.error(err.message);
     console.log(`The entry with ID ${id} was added to the database.`);
   });
 };
 
 let calcMedian = (callback) => {
-  const query = "SELECT DISTINCT ts time FROM zeiten";
+  const query = "SELECT * FROM zeiten";
   let total = 0;
   let amount = 0;
   let error = null;
 
-  db.all(query, [], (err, rows) => {
+  client.query(query, [], (err, res) => {
     if (err) {
-      callback(err, null);
+      return callback(err, null);
     }
-    rows.forEach((row) => {
-      total += row.time;
+
+    res.rows.forEach((row) => {
+      total += new Date(row.ts).getTime();
       amount++;
     });
 
