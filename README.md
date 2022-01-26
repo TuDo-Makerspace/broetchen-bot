@@ -34,12 +34,18 @@ Diese Commands unterstütz der Bot von Haus aus, und kann so auch ohne den iOS S
 
 ### /start
 
-Begrüßung, wenn der Bot das erste Mal gestartet wird
+Begrüßung, wenn der Bot das erste Mal gestartet wird.
 
 ### /hunger
 
-Gibt eine Prediction über die nächste halbe Stunde aus, sowie die Zeit mit der größten Wahrscheinlichkeit eines Erscheinens aus
+Gibt die Durchschnittliche Uhrzeit des Erscheinens des Brötchenmannes aus.
 
-### /warda TT.MM.JJJJ,SS/MM
+### /warda
 
-Speichert einen neuen Erscheinungszeitpunkt in der Datenbank, der für zukünftige Berechnungen genutzt wird. Der Timestamp hat das Format TT.MM.JJJJ,SS/MM
+Speichert einen neuen Erscheinungszeitpunkt in der Datenbank, der für zukünftige Berechnungen genutzt wird.
+
+## API
+
+### localhost:5000/warda
+
+API Endpoint für iOS Shortcut. Macht das gleiche wie /warda in Telegram.
