@@ -2,12 +2,15 @@ const { v4: uuidv4 } = require("uuid");
 const { formattedDate, formattedTime } = require("./helpers");
 const sqlite3 = require("sqlite3").verbose();
 
-let db = new sqlite3.Database("./db/broetchenbot.db", (err) => {
-  if (err) {
-    return console.error(err.message);
+let db = new sqlite3.Database(
+  path.resolve(__dirname, "./db/broetchenbot.db"),
+  (err) => {
+    if (err) {
+      return console.error(err.message);
+    }
+    console.log("Successfully conntected to the database.");
   }
-  console.log("Successfully conntected to the database.");
-});
+);
 
 const initDB = () => {
   db.prepare("CREATE TABLE IF NOT EXISTS zeiten (id TEXT, ts DATETIME)")
