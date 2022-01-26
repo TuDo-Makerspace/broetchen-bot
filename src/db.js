@@ -2,7 +2,12 @@ const { v4: uuidv4 } = require("uuid");
 const { formattedTime } = require("./helpers");
 const { Client } = require("pg");
 
-const client = new Client({ connectionString: process.env.DATABASE_URL });
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 client.connect();
 
 const initDB = () => {
