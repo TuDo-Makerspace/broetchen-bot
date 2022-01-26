@@ -2,7 +2,7 @@
 
 Dieser Telegram-Bot trackt die Zeiten, in denen der Brötchenmann erschienen ist und berechnet daraus die Zeit, zu der er am Wahrscheinlichsten nächstes Mal erscheinen könnte.
 
-Dieser Bot basiert auf Node.js mit npm und SQLite 3. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet.
+Dieser Bot basiert auf Node.js mit npm und SQLite 3. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet (https://www.icloud.com/shortcuts/0e9914618f8f49fdba4dfc13bc94af5d).
 
 Der Original-Bot von Ecki ist hier zu finden: t.me/broetchen_bot
 
