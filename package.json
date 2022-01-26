@@ -1,14 +1,17 @@
 {
-  "name": "broetchen_bot",
+  "name": "broetchen-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Dieser Telegram-Bot trackt die Zeiten, in denen der Brötchenmann erschienen ist und berechnet daraus die Zeit, zu der er am Wahrscheinlichsten nächstes Mal erscheinen könnte.",
+  "main": "bot.js",
   "scripts": {
     "start": "node src/bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ecki",
-  "license": "ISC",
+  "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "dotenv": "^14.3.2",
     "express": "^4.17.2",

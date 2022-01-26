@@ -44,6 +44,8 @@ Gibt die Durchschnittliche Uhrzeit des Erscheinens des Brötchenmannes aus.
 
 Speichert einen neuen Erscheinungszeitpunkt in der Datenbank, der für zukünftige Berechnungen genutzt wird.
 
+---
+
 ## API
 
 ### localhost:5000/warda
