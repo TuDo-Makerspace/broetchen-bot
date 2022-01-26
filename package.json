@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ecki",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.3.2",
+    "sqlite3": "^5.0.2",
+    "telegraf": "^4.6.0",
+    "uuid": "^8.3.2"
+  }
 }

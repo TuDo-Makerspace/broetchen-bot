@@ -1,1 +1,45 @@
-# broetchen-bot
+# Brötchenbot
+
+Dieser Telegram-Bot trackt die Zeiten, in denen der Brötchenmann erschienen ist und berechnet daraus die Zeit, zu der er am Wahrscheinlichsten nächstes Mal erscheinen könnte.
+
+Dieser Bot basiert auf Node.js mit npm und SQLite 3. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet.
+
+Der Original-Bot von Ecki ist hier zu finden: t.me/broetchen_bot
+
+---
+
+## Usage
+
+### Voraussetzungen
+
+Der Code enthält keine sensiblen Daten, wie den Bot-Token. Du musst dir deinen eigenen Telegram-Bot erstellen und deine eigenen Daten eintragen.
+
+Wie du einen Telegram-Bot erstellen kannst: https://core.telegram.org/bots#6-botfather
+
+Desweiteren muss npm auf deinem Rechner installiert sein: https://docs.npmjs.com/cli/v7/configuring-npm/install
+
+### Run
+
+Nachdem du die Repo geklont hast, musst du nur noch die folgenden Schritte ausführen, und schon läuft dein Bot auf deiner Maschine:
+
+1. Benenne die example.env in .env um und fülle die entsprechenden Felder aus
+2. Führe "npm i" aus
+3. Führe "npm start" aus
+
+---
+
+## Commands
+
+Diese Commands unterstütz der Bot von Haus aus, und kann so auch ohne den iOS Shortcut verwendet werden.
+
+### /start
+
+Begrüßung, wenn der Bot das erste Mal gestartet wird
+
+### /hunger
+
+Gibt eine Prediction über die nächste halbe Stunde aus, sowie die Zeit mit der größten Wahrscheinlichkeit eines Erscheinens aus
+
+### /warda TT.MM.JJJJ,SS/MM
+
+Speichert einen neuen Erscheinungszeitpunkt in der Datenbank, der für zukünftige Berechnungen genutzt wird. Der Timestamp hat das Format TT.MM.JJJJ,SS/MM
