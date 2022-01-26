@@ -1,5 +1,6 @@
 const { Telegraf } = require("telegraf");
-const { initDB, insertTime, calcProbability } = require("./db.js");
+const { initDB, insertTime } = require("./db.js");
+require("./server.js");
 require("dotenv").config();
 
 // initialize bot and db
@@ -23,26 +24,16 @@ bot.command("/hunger", (context) => {
 // war da
 bot.command("/warda", (context) => {
   const currentTime = new Date();
-  const locale = "de-DE";
-  const dateFormat = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const timeFormat = {
-    hour: "2-digit",
-    minute: "2-digit",
-  };
-
-  const formattedDate = currentTime.toLocaleDateString(locale, dateFormat);
-  const formattedTime = currentTime.toLocaleTimeString(locale, timeFormat);
 
   try {
     insertTime(currentTime);
+
+    date = formattedDate(currentTime);
+    time = formattedTime(currentTime);
+
     bot.telegram.sendMessage(
       context.chat.id,
-      `Der Brötchenmann war am ${formattedDate} um ${formattedTime} Uhr da.`,
+      `Der Brötchenmann war am ${date} um ${time} Uhr da.`,
       {}
     );
   } catch (err) {
@@ -52,5 +43,27 @@ bot.command("/warda", (context) => {
     );
   }
 });
+
+let formattedDate = (datetime) => {
+  const locale = "de-DE";
+  const dateFormat = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  return (formattedDate = datetime.toLocaleDateString(locale, dateFormat));
+};
+
+let formattedTime = (datetime) => {
+  const locale = "de-DE";
+  const timeFormat = {
+    hour: "2-digit",
+    minute: "2-digit",
+  };
+
+  return (formattedTime = datetime.toLocaleTimeString(locale, timeFormat));
+};
 
 bot.launch();
