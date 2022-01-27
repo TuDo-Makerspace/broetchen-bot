@@ -1,6 +1,7 @@
 const { v4: uuidv4 } = require("uuid");
 const { formattedTime } = require("./helpers");
 const { Client } = require("pg");
+require("dotenv").config();
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
