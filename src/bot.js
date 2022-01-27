@@ -41,14 +41,10 @@ bot.command("/warda", (context) => {
   try {
     insertTime(currentTime);
 
-    date = formattedDate(currentTime);
-    time = formattedTime(currentTime);
+    //date = formattedDate(currentTime);
+    //time = formattedTime(currentTime);
 
-    bot.telegram.sendMessage(
-      context.chat.id,
-      `Der Brötchenmann war am ${date} um ${time} Uhr da.`,
-      {}
-    );
+    bot.telegram.sendMessage(context.chat.id, `Der Brötchenmann war da.`, {});
   } catch (err) {
     console.error(err.message);
     bot.telegram.sendMessage(
