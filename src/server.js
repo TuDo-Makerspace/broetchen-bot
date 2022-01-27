@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { insertTime, calcMedian } = require("./db.js");
-const moment = require("moment-timezoneps");
+const moment = require("moment-timezone");
 moment().format();
 moment.tz.setDefault("Europe/Berlin");
 require("dotenv").config();

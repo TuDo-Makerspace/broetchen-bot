@@ -1,7 +1,7 @@
 const { Telegraf } = require("telegraf");
 const { initDB, insertTime, calcMedian } = require("./db.js");
 const { formattedDate, formattedTime } = require("./helpers");
-const moment = require("moment-timezoneps");
+const moment = require("moment-timezone");
 moment().format();
 moment.tz.setDefault("Europe/Berlin");
 require("./server.js");
