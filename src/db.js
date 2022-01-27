@@ -11,7 +11,7 @@ const client = new Client({
 client.connect();
 
 const initDB = () => {
-  const query = "CREATE TABLE IF NOT EXISTS zeiten(id TEXT, ts TIMESTAMP)";
+  const query = "CREATE TABLE IF NOT EXISTS zeiten(id TEXT, ts TIMESTAMPTZ)";
   client.query(query, [], (err, result) => {
     if (err) return console.error(err.message);
     console.log("Successfully connected to database.");

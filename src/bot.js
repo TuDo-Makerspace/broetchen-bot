@@ -1,6 +1,9 @@
 const { Telegraf } = require("telegraf");
 const { initDB, insertTime, calcMedian } = require("./db.js");
 const { formattedDate, formattedTime } = require("./helpers");
+const moment = require("moment-timezoneps");
+moment().format();
+moment.tz.setDefault("Europe/Berlin");
 require("./server.js");
 require("dotenv").config();
 
@@ -33,7 +36,7 @@ bot.command("/hunger", (context) => {
 
 // war da
 bot.command("/warda", (context) => {
-  const currentTime = new Date();
+  const currentTime = moment();
 
   try {
     insertTime(currentTime);

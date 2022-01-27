@@ -15,6 +15,8 @@
   "dependencies": {
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.34",
     "pg": "^8.7.1",
     "telegraf": "^4.6.0",
     "uuid": "^8.3.2"
