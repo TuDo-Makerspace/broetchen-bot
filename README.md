@@ -4,7 +4,7 @@ Diese Software trackt die Zeiten, in denen der Brötchenmann erschienen ist und 
 
 Es handelt sich hierbei um einen Telegram-Bot + REST API. Die API ist für Anfragen via iOS Shortcuts ausgelegt.
 
-Der Bot basiert auf Node.js mit npm und PostgreSQL, die API baut auf Express auf. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet (https://www.icloud.com/shortcuts/957fd2e03046455aaae933540beabe7c).
+Der Bot basiert auf Node.js mit npm und PostgreSQL, die API baut auf Express auf. Er ist dazu designed, damit er nahtlos mit Yunis' iOS Shortcut zusammenarbeitet (https://www.icloud.com/shortcuts/c47edd1ea7be4340bb5a6e7f01fbd94d).
 
 Der Original-Bot von Ecki ist hier zu finden: https://t.me/broetchen_bot
 
